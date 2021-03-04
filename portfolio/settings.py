@@ -26,7 +26,7 @@ SECRET_KEY = "yd8)hrw(xe#yx*4r#vr6uq*jenkblsg!9p0@t0^&yy6wtrtwh3"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bob82.pythonanywhere.com']
+ALLOWED_HOSTS = ['kimvolodymyr.pythonanywhere.com']
 
 
 # Application definition
@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 try:
     from .local_settings import *
