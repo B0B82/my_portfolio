@@ -1,0 +1,12 @@
+{% extends 'my_portfolio/index.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.description|safe }}</p>
+    <a href="{% url 'blog:all_blogs' %}">Back</a>
+
+{%endblock %}

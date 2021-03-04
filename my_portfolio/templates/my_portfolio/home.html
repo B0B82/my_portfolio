@@ -1,0 +1,27 @@
+{% extends 'my_portfolio/index.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="header">
+    <div class="team-clean">
+        <div class="container">
+            <div class="row people">
+                <div class="col-md-6 col-lg-6 offset-lg-3 item">
+                    <img class="rounded-circle" src="{% static 'my_portfolio/KimVA320_320.jpg' %}">
+                    <h3 class="name">Vladimir Kim</h3>
+                    <p class="title">Python developer</p>
+                    <p class="description">Python, PostgreSQL, Django, Rest API, Git, Docker, Linux, Windows, English B1</p>
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/-vladimir-kim/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://github.com/B0B82"><i class="fa fa-git"></i></a>
+                        <a href="@Kimvladimir_dev"><i class="fa fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
