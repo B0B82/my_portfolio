@@ -4,7 +4,7 @@
 
 
 {% block content %}
-
+<br>
 <div class="container">
     <h2 class="text-center">Blog post</h2>
     <div class="row">
@@ -15,9 +15,8 @@
             <div class="card" style=" margin: 15px 0px 15px 0px;">
                 <div class="card-body" style="height: 200px;">
                     <a href="{% url 'blog:detail' blog.id %}"><h4 class="card-title">{{ blog.title }}</h4></a>
-                    <p class="card-text">{{ blog.description|striptags|truncatechars:150}}</p>
+                    <p class="card-text">{{ blog.description|striptags|truncatechars:140}}</p>
                     <p class="text-muted card-subtitle mb-2">({{ blog.date|date:'M D Y  H:i' }})</p>
-
                 </div>
             </div>
         </div>

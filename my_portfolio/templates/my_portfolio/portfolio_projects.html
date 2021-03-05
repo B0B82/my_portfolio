@@ -1,0 +1,29 @@
+{% extends 'my_portfolio/index.html' %}
+
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row d-md-flex justify-content-md-center">
+
+        {% for project in projects %}
+
+        <div class="col-md-6">
+            <div class="card" style=" margin: 15px 0px 15px 0px;">
+                <div class="card-body">
+                    <img src="{% if project.image %}{{ project.image.url }}{% else %}{% static 'my_portfolio/no_image.jpg' %}{% endif %}" class="d-none d-md-block d-lg-block" style="float:right;width:160px;height:200px;">
+                    <a href="{% url 'project:project_detail' project.id %}"><h4 class="card-title">{{ project.title }}</h4></a>
+                    <p class="card-text">{{ project.description|striptags|truncatechars:150}}</p>
+                    <p class="text-muted card-subtitle mb-2">({{ project.date|date:'M D Y  H:i' }})</p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

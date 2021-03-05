@@ -1,0 +1,12 @@
+{% extends 'my_portfolio/index.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br>
+<div class="container">
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description|safe }}</p>
+    <a href="{% url 'project:portfolio_projects' %}">Back</a>
+</div>
+{%endblock %}

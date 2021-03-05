@@ -20,11 +20,12 @@ from django.conf import settings
 from my_portfolio import views as mpv
 from blog import views as bv
 
+app_name = 'main'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mpv.home, name='home'),
-    # path('blog/', bv.all_blogs, name='all_blogs'),
+    path('project/', include('my_portfolio.urls')),
     path('blog/', include('blog.urls')),
 ]
 
