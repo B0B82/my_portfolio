@@ -125,6 +125,24 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+# Celery
+CELERY_BROKER_URL = 'redis://:p12863e29a2c50bfce785979a5cfebc038f6087a7dbf8cebe19aeb2a66f1c2088@ec2-54-236-163-84.compute-1.amazonaws.com:31759'
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TASK_TRACK_STARTED = True
+
+# Email
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"  # add your own settings here
+EMAIL_PORT = 587  # add your own settings here
+EMAIL_HOST_USER = "kimvolodymyr1@gmail.com"  # add your own settings here
+EMAIL_HOST_PASSWORD = "YXa4HB9qsEFEy4z"  # add your own settings here
+EMAIL_USE_TLS = True  # add your own settings here
+# DEFAULT_FROM_EMAIL = "you@example.com"  # your email address
+
+
+
 try:
     from .local_settings import *
 except ImportError:

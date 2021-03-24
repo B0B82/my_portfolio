@@ -27,6 +27,8 @@ urlpatterns = [
     path('', mpv.home, name='home'),
     path('project/', include('my_portfolio.urls')),
     path('blog/', include('blog.urls')),
+
+    path('celery/', include('my_portfolio.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
