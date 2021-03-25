@@ -35,12 +35,43 @@
                         </div>
                     </li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a></li>
-<!--                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Shop</a></li>-->
+                    <li class="nav-item" role="presentation">
+
+
+                        {% if request.user.is_authenticated %}
+                            <form action="{% url 'logout' %}">
+                                <button type="submit" class="btn btn-primary">Logout, {{ request.user }}</button>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'login' %}">
+                                <button type="submit" class="btn btn-primary">Log-in</button>
+                            </form>
+                        {% endif %}
+
+
+
+                    </li>
+<!--                    <li>-->
+<!--                        {% if request.user.is_authenticated %}-->
+<!--                        <ul class="menu">-->
+<!--                            <li {% if section == 'dashboard' %}class="selected"{% endif %}>-->
+<!--                                <a href="{% url 'dashboard' %}">My dashboard</a>-->
+<!--                            </li>-->
+<!--                            <li {% if section == 'images' %}class="selected"{% endif %}>-->
+<!--                                <a href="#">Images</a>-->
+<!--                            </li>-->
+<!--                            <li {% if section == 'people' %}class="selected"{% endif %}>-->
+<!--                                <a href="#">People</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                        {% endif %}-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>
     </nav>
     <!-- End: Navigation Clean -->
+    <br>
     {% block content %}{% endblock %}
 
     <footer class="text-center">

@@ -1,0 +1,10 @@
+{% extends 'my_portfolio/index.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+  <h1>Dashboard</h1>
+  <p>Welcome to your dashboard. You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+</div>
+{% endblock %}
