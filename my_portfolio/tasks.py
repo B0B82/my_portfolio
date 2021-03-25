@@ -10,6 +10,6 @@ def sleepy(duration):
 
 
 @shared_task
-def send_email_task():
-    send_mail('Celery task worked', 'Lorem', 'kimvolodymyr1@gmail.com', ['kimvladimirgsu@gmail.com'])
+def send_email_task(new_user):
+    send_mail('Congratulations!', 'You registered!', 'kimvolodymyr1@gmail.com', [f"{new_user.email}"])
     return None

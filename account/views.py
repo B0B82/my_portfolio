@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
+from  my_portfolio.tasks import *
 
 
 def user_login(request):
@@ -48,6 +49,7 @@ def register(request):
             new_user.save()
             # Create the user profile
             Profile.objects.create(user=new_user)
+            send_email_task(new_user)
             return render(request,
                           'account/register_done.html',
                           {'new_user': new_user})
