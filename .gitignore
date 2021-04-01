@@ -2,5 +2,9 @@
 *.pot
 *.pyc
 __pycache__/
+venv/
 local_settings.py
 /static/
+/portfolio/.env
+.idea/
+db.sqlite3
