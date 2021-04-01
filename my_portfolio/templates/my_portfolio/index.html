@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Portfolio</title>
+    <title>Portfolio Kim Vladimir</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'my_portfolio/styles.min.css' %}">
@@ -37,7 +37,6 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a></li>
                     <li class="nav-item" role="presentation">
 
-
                         {% if request.user.is_authenticated %}
                             <form action="{% url 'logout' %}">
                                 <button type="submit" class="btn btn-primary">Logout, {{ request.user }}</button>
@@ -48,24 +47,7 @@
                             </form>
                         {% endif %}
 
-
-
                     </li>
-<!--                    <li>-->
-<!--                        {% if request.user.is_authenticated %}-->
-<!--                        <ul class="menu">-->
-<!--                            <li {% if section == 'dashboard' %}class="selected"{% endif %}>-->
-<!--                                <a href="{% url 'dashboard' %}">My dashboard</a>-->
-<!--                            </li>-->
-<!--                            <li {% if section == 'images' %}class="selected"{% endif %}>-->
-<!--                                <a href="#">Images</a>-->
-<!--                            </li>-->
-<!--                            <li {% if section == 'people' %}class="selected"{% endif %}>-->
-<!--                                <a href="#">People</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                        {% endif %}-->
-<!--                    </li>-->
                 </ul>
             </div>
         </div>
@@ -76,7 +58,7 @@
 
     <footer class="text-center">
         <p class="text-center contact">Ukraine Kiev | +38 063 853 27 53 </p>
-        <a href = "mailto: kimvlolodymyr1@gmail.com">Send Email</a>
+        <a href = "mailto:kimvlolodymyr1@gmail.com">Send Email</a>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
